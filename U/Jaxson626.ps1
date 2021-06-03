@@ -3,7 +3,7 @@
 Param (
 
     [Parameter(ValueFromPipelineByPropertyName)]
-    [System.String[]]
+    [System.String]
     $ComputerName,
 
     [Parameter()]
