@@ -1,3 +1,5 @@
+# https://www.reddit.com/r/PowerShell/comments/nrj7le/enable_numlock_for_all_users_at_startup/h0h9gmh/?context=3
+
 [CmdletBinding()]
 
 Param (
