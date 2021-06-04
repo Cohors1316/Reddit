@@ -1,6 +1,4 @@
-<#
-https://www.reddit.com/r/PowerShell/comments/nrmeci/i_have_17_csv_files_in_a_folder_and_i_need_to/
-#>
+# https://www.reddit.com/r/PowerShell/comments/nrmeci/i_have_17_csv_files_in_a_folder_and_i_need_to/
 $Null = [System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms')
 $Null = [System.Reflection.Assembly]::LoadWithPartialName('PresentationFramework')
 [System.Windows.Forms.Application]::EnableVisualStyles()
