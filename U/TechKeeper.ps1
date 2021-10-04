@@ -1,3 +1,4 @@
+# https://www.reddit.com/r/PowerShell/comments/pzvtej/assistance_with_exit_functionality/
 Param (
 
     # AD
