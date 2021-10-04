@@ -13,9 +13,9 @@ Param (
 $StaleUsers = Get-ADUser -Filter * -SearchBase $SearchBase -Properties 'LastLogOnDate' |
 Where-Object -FilterScript {($_.LastLogOnDate -LE (Get-Date).AddDays(-$OlderThan)) -And ($_.Enabled -Eq $True)} |
 Select-Object -Property Name, SamAccountName
-Write-Output -InputObject $StaleUsers
 If ($StaleUsers) {
 
+    Format-Table -InputObject $StaleUsers
     $Documents = [System.Environment]::GetFolderPath('MyDocuments')
     Export-Csv -Path $Documents\StaleUsers\List.csv -InputObject $StaleUsers -NoClobber
     Exit 1001
