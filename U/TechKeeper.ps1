@@ -18,6 +18,7 @@ If ($StaleUsers) {
     Write-Host -Object 'Stale users found'
     $Documents = [System.Environment]::GetFolderPath('MyDocuments')
     Export-Csv -Path $Documents\StaleUsers\List.csv -InputObject $StaleUsers -NoClobber
+    Write-Output -InputObject $StaleUsers
     Exit 1001
 
 } Else {
