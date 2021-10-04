@@ -5,7 +5,7 @@ Param (
     $SearchBase,
 
     # Days
-    [System.Int16]
+    [System.String]
     $OlderThan
 
 )
