@@ -16,7 +16,7 @@ Where-Object -FilterScript {($_.LastLogOnDate -LE (Get-Date).AddDays(-$OlderThan
 Select-Object -Property Name, SamAccountName
 If ($StaleUsers) {
 
-    Format-Table -InputObject $StaleUsers
+    Write-Host -Object $StaleUsers
     $Documents = [System.Environment]::GetFolderPath('MyDocuments')
     Export-Csv -Path $Documents\StaleUsers\List.csv -InputObject $StaleUsers -NoClobber
     Exit 1001
