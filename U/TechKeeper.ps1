@@ -13,12 +13,11 @@ Param (
 $StaleUsers = Get-ADUser -Filter * -SearchBase $SearchBase -Properties 'LastLogOnDate' |
 Where-Object -FilterScript {($_.LastLogOnDate -LE (Get-Date).AddDays(-$OlderThan)) -And ($_.Enabled -Eq $True)} |
 Select-Object -Property Name, SamAccountName
+Write-Output -InputObject $StaleUsers
 If ($StaleUsers) {
 
-    Write-Host -Object 'Stale users found'
     $Documents = [System.Environment]::GetFolderPath('MyDocuments')
     Export-Csv -Path $Documents\StaleUsers\List.csv -InputObject $StaleUsers -NoClobber
-    Write-Output -InputObject $StaleUsers
     Exit 1001
 
 } Else {
