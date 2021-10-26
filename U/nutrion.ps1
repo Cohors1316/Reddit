@@ -1,7 +1,7 @@
 # https://www.reddit.com/r/PowerShell/comments/qfs9ko/array_is_not_adding_new_entries_and_i_cant_figure/
 
-$List = [System.Collections.Generic.List[System.String]]::New()
 ForEach ($Account In $Identity) {
+    $List = [System.Collections.Generic.List[System.String]]::New()
     $User = Get-AdUser -Identity $Account -Properties Name, Mail, Manager
     $List.Add("$($User.Name), $($User.Mail)")
 
