@@ -1,9 +1,6 @@
-[CmdletBinding()]
-Param ($Test)
 Set-StrictMode -Version 3.0
 $ErrorActionPreference = 'Stop'
 $Error.Clear()
-
 
 Trap [System.Management.Automation.CommandNotFoundException] {
     Switch ($_.Exception.CommandName) {
